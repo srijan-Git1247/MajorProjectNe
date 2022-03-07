@@ -1,14 +1,17 @@
 import React from "react";
 import Layout from "../../components/Layout";
 import { API_URL } from "../../config/index";
+import RequestItem from "../../components/RequestItem";
+
 export default function EventsPage({ events }) {
   return (
-    <Layout title="Active Requirements">
+    <Layout>
       <h1>Active Requirements</h1>
-
       {events === 0 && <h1>No Requests</h1>}
 
-      {events.map(evt=>< h3 key={evt.id}>{evt.name},{evt.date}</h3>)}
+      {events.map((evt) => (
+        <RequestItem key={evt.id} evt={evt} />
+      ))}
     </Layout>
   );
 }
