@@ -3,9 +3,9 @@
       {
         "id": "1",
         "name": "Shovit Tamang",
-        "slug": "Donation 1",
+        "slug": "Donation1",
         "venue": "Stnm hospital",
-        "address": "Sochakagang",
+        "address": "Sochakgang",
         "units": "70 Units",
         "date": "June 09, 2021",
         "time": "10:00 PM EST",
@@ -15,7 +15,7 @@
       {
         "id": "2",
         "name": "Sankalp",
-        "slug": "Donation 2",
+        "slug": "Donation2",
         "venue": "Manipal Hospital",
         "address": "Tadong",
         "units": "80 units",
@@ -27,7 +27,7 @@
       {
         "id": "3",
         "name": "Pratik",
-        "slug": "Donation 3",
+        "slug": "Donation3",
         "venue": "Stnm",
         "address": "Tadong",
         "units": "30 units",
@@ -39,7 +39,7 @@
       {
         "id": "4",
         "name": "Shahil",
-        "slug": "Donation 4",
+        "slug": "Donation4",
         "venue": "Blood Camp",
         "address": "Zero Point",
         "units": "60 units",
@@ -51,7 +51,7 @@
       {
         "id": "5",
         "name": "Mohit",
-        "slug": "Donation 5",
+        "slug": "Donation5",
         "venue": "Mahe Clinics",
         "address": "MG/Marg",
         "units": "88 units",
@@ -63,7 +63,7 @@
       {
         "id": "6",
         "name": "Parivesh",
-        "slug": "Donation 6",
+        "slug": "Donation6",
         "venue": "Red Fest Camp",
         "address": "Manan Kendra",
         "units": "20 units",

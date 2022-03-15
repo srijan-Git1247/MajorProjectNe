@@ -11,7 +11,7 @@ export default function RequestItem({ evt }) {
         <Image
           src={
             evt.image
-              ? evt.image
+              ? evt.image.formats.thumbnail.url
               : "/public/images/Blood-Donation-Transparent-Background.png"
           }
           width={170}
@@ -20,7 +20,7 @@ export default function RequestItem({ evt }) {
       </div>
       <div className={styles.info}>
         <span>
-          {evt.date} at {evt.time}
+          {new Date(evt.date).toLocaleDateString("en-UK")} at {evt.time}
         </span>
         <h3>{evt.name}</h3>
       </div>

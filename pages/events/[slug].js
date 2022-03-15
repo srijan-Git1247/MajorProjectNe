@@ -5,8 +5,8 @@ import { API_URL } from "../../config";
 import styles from "../../styles/Event.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { FaPencilAlt, FaTimes } from "react-icons/fa";
-import {IoChatbubble} from "react-icons/io5"
+import { FaTimes } from "react-icons/fa";
+import { IoChatbubble } from "react-icons/io5";
 export default function EventPage({ evt }) {
   const router = useRouter();
   const deleteEvent = (e) => {
@@ -31,12 +31,12 @@ export default function EventPage({ evt }) {
         </div>
 
         <span>
-          {evt.date} at {evt.time}
+          {new Date(evt.date).toLocaleDateString("en-UK")} at {evt.time}
         </span>
         <h1>{evt.name}</h1>
         {evt.image && (
           <div className="">
-            <Image src={evt.image} width={960} height={600} />
+            <Image src={evt.image.url} width={960} height={600} />
           </div>
         )}
 
@@ -48,7 +48,7 @@ export default function EventPage({ evt }) {
         <p>{evt.address}</p>
 
         <Link href="/events">
-          <a className={styles.back}>{" <"} GO Back</a>
+          <a className={styles.back}>{" <"}Go Back </a>
         </Link>
       </div>
     </Layout>
@@ -71,7 +71,7 @@ export async function getServerSideProps({query:{slug}})
   }
 }*/
 export async function getStaticPaths() {
-  const res = await fetch(`${API_URL}/api/events`);
+  const res = await fetch(`${API_URL}/events`);
   const events = await res.json();
   const paths = events.map((evt) => ({
     params: {
@@ -84,7 +84,7 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps({ params: { slug } }) {
-  const res = await fetch(`${API_URL}/api/events/${slug}`);
+  const res = await fetch(`${API_URL}/events?slug=${slug}`);
 
   const events = await res.json();
   return {

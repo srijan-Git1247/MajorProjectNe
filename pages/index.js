@@ -14,20 +14,20 @@ export default function HomePage({ events }) {
         <RequestItem key={evt.id} evt={evt} />
       ))}
 
-      {events.length>0 && (<Link href="/events">
-        
-        <a className="btn-secondary">View Other Requests</a>
-        
-        </Link>)}
+      {events.length > 0 && (
+        <Link href="/events">
+          <a className="btn-secondary">View Other Requests</a>
+        </Link>
+      )}
     </Layout>
   );
 }
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/events`);
+  const res = await fetch(`${API_URL}/events?_sort=date:ASC&_limit=3`);
   const events = await res.json();
 
   return {
-    props: { events:events.slice(0,3)},
+    props: { events },
     revalidate: 1,
   };
 }

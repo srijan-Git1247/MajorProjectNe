@@ -4,7 +4,7 @@ export default function add() {
   return (
     <Layout title="Request Blood">
       <h1>
-        Add Request</h1>
+        Add a Request</h1>
         </Layout>
   )
 }
