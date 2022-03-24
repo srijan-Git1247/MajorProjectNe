@@ -7,17 +7,37 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaTimes } from "react-icons/fa";
 import { IoChatbubble } from "react-icons/io5";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function EventPage({ evt }) {
   const router = useRouter();
-  const deleteEvent = (e) => {
+  const deleteEvent = async (e) => {
     console.log("delete");
+
+    if(confirm("Are you Sure you want to delete this?"))
+    {
+      const res=await fetch(`${API_URL}/events/${evt.id}`,{
+         method:"DELETE"
+      });
+      const data=await res.json();
+      if(!res.ok)
+      {
+        toast.error(data.message);
+      }
+      else{
+      
+      
+        router.push("/events");
+      }
+    }
+
   };
 
   return (
     <Layout title={router.query.slug}>
       <div className={styles.event}>
         <div className={styles.controls}>
-          <Link href={`/events/edit/${evt.id}`}>
+          <Link href={`/events/respond/${evt.id}`}>
             <a>
               <IoChatbubble />
               Respond to the request
@@ -33,7 +53,9 @@ export default function EventPage({ evt }) {
         <span>
           {new Date(evt.date).toLocaleDateString("en-UK")} at {evt.time}
         </span>
+
         <h1>{evt.name}</h1>
+        <ToastContainer/>
         {evt.image && (
           <div className="">
             <Image src={evt.image.url} width={960} height={600} />

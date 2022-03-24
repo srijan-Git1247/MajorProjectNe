@@ -12,7 +12,7 @@ export default function RequestItem({ evt }) {
           src={
             evt.image
               ? evt.image.formats.thumbnail.url
-              : "/public/images/Blood-Donation-Transparent-Background.png"
+              : "/images/Blood-Donation-Transparent-Background.png"
           }
           width={170}
           height={100}

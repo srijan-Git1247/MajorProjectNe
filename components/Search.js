@@ -12,7 +12,7 @@ export default function Search() {
     setTerm("");
   };
   return (
-    <div className={styles.Search}>
+    <div className={styles.search}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

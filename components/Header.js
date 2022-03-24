@@ -17,8 +17,15 @@ export default function Header() {
                 <Link href="/events">
                 <a>Active Requirements</a>
                 </Link>
-
+                
             </li>
+            <li>
+            <Link href="/events/add">
+                <a>Put a Request</a>
+                </Link>
+                
+            </li>
+
         </ul>
     </nav>
     </header>
